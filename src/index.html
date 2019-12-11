@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./global.css">
+</head>
+<body>
+    <div class="wrap">
+        <div class="mask"></div>
+        <div class="cont">
+            <div class="top">
+                <div>再过：5天4小时25分</div>
+                <div>就距离退休更进一步啦！</div>
+            </div>
+
+        </div>
+    </div>
+    <div id="img_source" style="display: none;"></div>
+</body>
+<script src="./jquery.min.js"></script>
+<script src="./global.js"></script>
+<script>
+
+$(document).ready(function(){
+    (function(doc, win) {
+        var docEl = doc.documentElement,
+            resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+            recalc = function() {
+                var clientWidth = docEl.clientWidth;
+                if (!clientWidth) return;
+                docEl.style.fontSize = 10 * (clientWidth / 320) + 'px';
+            };
+        if (!doc.addEventListener) return;
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener('DOMContentLoaded', recalc, false);
+    })(document, window);
+
+})
+</script>
+</html>
