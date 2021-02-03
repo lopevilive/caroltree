@@ -11,7 +11,7 @@ import { defineComponent, reactive, toRefs } from 'vue';
 export default defineComponent({
     setup(){
         let messageList = [
-            '很快啊，就又过年了',
+            '很快啊，就又过年了11',
             '希望大小姐健健康康',
             '快快乐乐',
             '咩都翻晒来'
