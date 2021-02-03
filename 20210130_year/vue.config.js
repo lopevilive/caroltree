@@ -1,3 +1,3 @@
 module.exports = {
-    publicPath:'./'
+    publicPath:'/20210130_year/dist/'
 }
