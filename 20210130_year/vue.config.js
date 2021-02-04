@@ -1,3 +1,3 @@
 module.exports = {
-    publicPath:'/20210130_year/dist/'
+    publicPath:'/caroltree/20210130_year/dist/'
 }
