@@ -602,7 +602,7 @@ var fireworks = [];
 var gravity = new Vector(0, 3);
 
 var backImg = new Image();   // Create new img element
-backImg.src = '/caroltree/assets/skyline.png'; // Set source path
+backImg.src = '/caroltree/20210130_year/assets/skyline.png'; // Set source path
 var scaleY, imgHeight, startY;
 
 window.main = function main() {
