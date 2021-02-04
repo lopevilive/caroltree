@@ -14,10 +14,17 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
+// eslint-disable-next-line
+import { defineComponent, inject, Ref } from "vue";
 
 export default defineComponent({
-
+    setup(){
+        const status = inject('status') as Ref<number>
+        const STATUSMAP = inject('STATUSMAP') as {[index:string]:any}
+        window.onload = ()=>{
+            status.value = STATUSMAP.stage1
+        }
+    }
 })
 </script>
 

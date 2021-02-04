@@ -14,7 +14,9 @@
         <div class="happy-pic" :class="{'happy-pic-frame':status >= STATUSMAP.stage4}"></div>
         <div class="ballon-fly" :class="{'ballon-fly-frame': status & STATUSMAP.stage5}"></div>
         <Ballon v-if="status >= STATUSMAP.stage5"></Ballon>
-        <Messages v-if="status & STATUSMAP.stage7"></Messages>
+        <transition name="fade">
+            <Messages v-if="status & STATUSMAP.stage7"></Messages>
+        </transition>
         <audio id="song" controls src="assets/hbd.mp3" loop> 
             Your browser isn't invited for super fun audio time.
         </audio>
