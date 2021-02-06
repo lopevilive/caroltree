@@ -39,24 +39,24 @@ export default defineComponent({
             })
         }
 
-        let loadVideo = (url:string) => {
-            return new Promise((resolve) => {
-                let video = new Audio();
-                video.src = url;
-                video.oncanplay = () => {
-                    console.log(`${url}-load success`);
-                    resolve();
-                    video.onload = video.onerror = null;
-                }
-                video.onerror = () => {
-                    console.log(`${url}-load err`);
-                    resolve();
-                    video.onload = video.onerror = null;
-                }
-            })
-        }
+        // let loadVideo = (url:string) => {
+        //     return new Promise((resolve) => {
+        //         let video = new Audio();
+        //         video.src = url;
+        //         video.oncanplay = () => {
+        //             console.log(`${url}-load success`);
+        //             resolve();
+        //             video.onload = video.onerror = null;
+        //         }
+        //         video.onerror = () => {
+        //             console.log(`${url}-load err`);
+        //             resolve();
+        //             video.onload = video.onerror = null;
+        //         }
+        //     })
+        // }
         Promise.all([
-            loadVideo(`${window.dirPath}assets/hbd.mp3`),
+            // loadVideo(`${window.dirPath}assets/hbd.mp3`),
             loadImg(`${window.dirPath}assets/skyline.png`),
             loadImg(`${window.dirPath}img/bulb_blue.873aeb1c.png`),
             loadImg(`${window.dirPath}img/bulb_green.4c48b016.png`),
