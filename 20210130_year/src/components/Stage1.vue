@@ -17,11 +17,10 @@
         <transition name="fade">
             <Messages v-if="status & STATUSMAP.stage7"></Messages>
         </transition>
-        <audio id="song" controls src="/caroltree/20210130_year/assets/hbd.mp3" loop> 
+        <audio id="song" controls :src="mp3Url" loop> 
             Your browser isn't invited for super fun audio time.
         </audio>
     </div>
-    
 </template>
 
 <script lang="ts">
@@ -53,7 +52,8 @@ export default defineComponent({
         let res = {
             ...toRefs(state),
             status,
-            STATUSMAP:STATUSMAP
+            STATUSMAP:STATUSMAP,
+            mp3Url:`${window.dirPath}assets/hbd.mp3`
         }
         return res;
     },
@@ -85,12 +85,12 @@ export default defineComponent({
     background-size: 100%;
     background-repeat: no-repeat;
 }
-.bulb1{background:url('../assets/bulb_blue.png')}
-.bulb2{background:url('../assets/bulb_green.png')}
-.bulb3{background:url('../assets/bulb_orange.png')}
-.bulb4{background:url('../assets/bulb_pink.png')}
-.bulb5{background:url('../assets/bulb_red.png')}
-.bulb6{background:url('../assets/bulb_yellow.png')}
+.bulb1{background:url('../assets/bulb_blue.png');}
+.bulb2{background:url('../assets/bulb_green.png');}
+.bulb3{background:url('../assets/bulb_orange.png');}
+.bulb4{background:url('../assets/bulb_pink.png');}
+.bulb5{background:url('../assets/bulb_red.png');}
+.bulb6{background:url('../assets/bulb_yellow.png');}
 
 .bulb1-frame{animation: bulb1-frame 4s}
 .bulb2-frame{animation: bulb2-frame 4s}

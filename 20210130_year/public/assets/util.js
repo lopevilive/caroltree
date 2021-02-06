@@ -605,6 +605,7 @@ var gravity = new Vector(0, 3);
 var backImg = new Image();   // Create new img element
 setTimeout(() => {
     backImg.src = window.dirPath+'assets/skyline.png'; // Set source path
+    console.log(window.dirPath+'assets/skyline.png')
 }, 0);
 
 var scaleY, imgHeight, startY;

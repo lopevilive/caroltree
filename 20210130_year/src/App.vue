@@ -27,11 +27,11 @@ export default defineComponent({
       [STATUSMAP.stage3] : {btn:'Let\'s Decorate', last:3000},
       [STATUSMAP.stage4] : {btn:'Fly With Balloons', last:3000},
       [STATUSMAP.stage5] : {btn:'Let Off Fireworks', last:3000},
-      [STATUSMAP.stage6] : {btn:'a message for u'},
+      [STATUSMAP.stage6] : {btn:'a message for u', last:3000},
       [STATUSMAP.stage7] : {btn:''},
     }
 
-    const status = ref(STATUSMAP.stage0);
+    const status = ref(STATUSMAP.stage5);
 
     const state = reactive({
       showButton:true,

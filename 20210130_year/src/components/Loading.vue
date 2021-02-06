@@ -21,10 +21,59 @@ export default defineComponent({
     setup(){
         const status = inject('status') as Ref<number>
         const STATUSMAP = inject('STATUSMAP') as {[index:string]:any}
-        window.onload = ()=>{
-            status.value = STATUSMAP.stage1
+
+        let loadImg = (url:string) => {
+            return new Promise((resolve) => {
+                let img = new Image();
+                img.src = url;
+                img.onload = () => {
+                    console.log(`${url}-load success`);
+                    resolve();
+                    img.onload = img.onerror = null;
+                }
+                img.onerror = () => {
+                    resolve();
+                    img.onload = img.onerror = null;
+                    console.log(`${url}-load err`);
+                }
+            })
         }
+
+        let loadVideo = (url:string) => {
+            return new Promise((resolve) => {
+                let video = new Audio();
+                video.src = url;
+                video.oncanplay = () => {
+                    console.log(`${url}-load success`);
+                    resolve();
+                    video.onload = video.onerror = null;
+                }
+                video.onerror = () => {
+                    console.log(`${url}-load err`);
+                    resolve();
+                    video.onload = video.onerror = null;
+                }
+            })
+        }
+        Promise.all([
+            loadVideo(`${window.dirPath}assets/hbd.mp3`),
+            loadImg(`${window.dirPath}assets/skyline.png`),
+            loadImg(`${window.dirPath}img/bulb_blue.873aeb1c.png`),
+            loadImg(`${window.dirPath}img/bulb_green.4c48b016.png`),
+            loadImg(`${window.dirPath}img/bulb_orange.b3b06fc0.png`),
+            loadImg(`${window.dirPath}img/bulb_pink.a120c90b.png`),
+            loadImg(`${window.dirPath}img/bulb_red.37e81194.png`),
+            loadImg(`${window.dirPath}img/bulb_yellow.299d602e.png`),
+            loadImg(`${window.dirPath}img/bulb.df32c7b2.png`),
+            loadImg(`${window.dirPath}img/happy_pic.5a8c750a.png`),
+            loadImg(`${window.dirPath}img/Balloon-Border.5433c0fa.png`),
+        ])
+        .then(() => {
+            status.value = STATUSMAP.stage1
+        })
+        
     }
+    
 })
 </script>
 
