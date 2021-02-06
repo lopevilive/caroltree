@@ -31,7 +31,7 @@ export default defineComponent({
       [STATUSMAP.stage7] : {btn:''},
     }
 
-    const status = ref(STATUSMAP.stage5);
+    const status = ref(STATUSMAP.stage0);
 
     const state = reactive({
       showButton:true,
